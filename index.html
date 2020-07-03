@@ -48,7 +48,7 @@
 function PhoneNumberValidation() {
 
     var txtPhone = document.myForm.mobile.value;
-   if(txtPhone.Length!=10) {
+   if(txtPhone.length!=10) {
        alert("invalid format of mobile number")
        document.myForm.mobile.focus() ;
     }
@@ -102,7 +102,7 @@ function getalert(){
                                         <fieldset>
                                             <legend>INSTITUTE DETAILS</legend>
                                         <input type="text" class="form-control form-control" placeholder="Name of institute" required /><br>
-                                         <input type="number" class="form-control form-control" placeholder="Contact number" required /><br>
+                                         <input type="text" class="form-control form-control" placeholder="Contact number" required pattern="[0-9]{10}" required title="invalid format of mobile number" /><br>
                                          <input type="text" class="form-control form-control" placeholder="Address" required /><br>
 
                                           </fieldset>
@@ -112,9 +112,9 @@ function getalert(){
     <legend>personal details:</legend>
      <input type="text" class="form-control form-control" placeholder="Name" required /><br>
                                          <input type="email" name="email" class="form-control form-control" placeholder="Email id of person of contact" required /><br>
-                                         <input type="number" class="form-control form-control" placeholder="Contact number" pattern=".{10,10}" required /><br>
+                                         <input type="text" class="form-control form-control" placeholder="Contact number" pattern="[0-9]{10}" required title="invalid format of mobile number" required  /><br>
 
- <input type="number" class="form-control form-control" placeholder="office Contact number" required /><br>
+ <input type="text" class="form-control form-control" placeholder="office Contact number" requiredpattern="[0-9]{10}" required title="invalid format of mobile number"/><br>
 </fieldset>
 <!-- </form> -->
 
