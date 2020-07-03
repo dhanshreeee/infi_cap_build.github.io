@@ -54,28 +54,9 @@ function PhoneNumberValidation() {
     }
 
 }
-
-
 </script>
-<script>
-    
-function getalert(){
-    alert("coming soon...!")
-}
 
 
-</script>
-<style>
-    
-    #blur {
-        font-size: 40px;
-        color:red;
-        text-shadow: 0 0 8px #000;
-        text-align: right;
-        font-style: italic;
-
-    }
-</style>
 
 
     </head>
@@ -96,49 +77,40 @@ function getalert(){
 
                                     <form name="myForm"onsubmit = "return(validateEmail());">
                                         <label style="font-weight: 600;">From ID : </label><span id="id"></span>
-                                        
-                                        
-                                       <!-- <form> -->
-                                        <fieldset>
-                                            <legend>INSTITUTE DETAILS</legend>
-                                        <input type="text" class="form-control form-control" placeholder="Name of institute" required /><br>
-                                         <input type="number" class="form-control form-control" placeholder="Contact number" required /><br>
-                                         <input type="text" class="form-control form-control" placeholder="Address" required /><br>
-
-                                          </fieldset>
-<!-- </form> -->
-<!-- <form> -->
-  <fieldset>
-    <legend>personal details:</legend>
-     <input type="text" class="form-control form-control" placeholder="Name" required /><br>
-                                         <input type="email" name="email" class="form-control form-control" placeholder="Email id of person of contact" required /><br>
-                                         <input type="number" class="form-control form-control" placeholder="Contact number" pattern=".{10,10}" required /><br>
-
- <input type="number" class="form-control form-control" placeholder="office Contact number" required /><br>
-</fieldset>
-<!-- </form> -->
-
-
-
-
- <div class="form-group">
+                                        <div class="form-group">
                                             <select class="form-control" id="sel1">
                                               <option value="Select Service">Select Service</option>
-                                              <option value="3D Printing" onclick="getalert();">workshops</option>
-                                              <option value="Laser Cutting">webinar</option>
+                                              <option value="3D Printing">3D Printing</option>
+                                              <option value="Laser Cutting">Laser Cutting</option>
                                             </select>
                                           </div>
-
-
-
-                                        
+                                        <input type="text" class="form-control form-control" placeholder="Client Name" required /><br>
+                                        <input type="email" name="email"class="form-control form-control" placeholder="Email ID" required /><br>
+                                        <input type="number" class="form-control form-control" placeholder="Phone Number" name="mobile" id="mobile"maxlength="10" pattern="\d{10}" minlength="10" min="1000000000"required><br>
+                                        <input type="text" class="form-control form-control" placeholder="Address" required /><br>
+                                        <input type="text" class="form-control form-control" placeholder="Company Name" required /><br>
+                                        <label style="font-weight: 600;">Dimension of the part</label><br>
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <input type="text" class="form-control form-control" placeholder="Length" required />
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <input type="text" class="form-control form-control"  placeholder="Breadth" required />
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <input type="text" class="form-control form-control"  placeholder="Height" required />
+                                            </div>
+                                        </div><br>
+                                        <input type="text" class="form-control form-control"  placeholder="Material" required="" /><br>
+                                        <input type="number" min="1" max="10" class="form-control form-control"  placeholder="Quantity" /><br>
+                                        <label style="font-weight: 600;">Design</label>
+                                        <input type="file" class="form-control-file border"/><br>
+                                        <textarea class="form-control" rows="5" placeholder="Remark"></textarea>
+                                        <hr />
                                     <input type="submit" class="btn btn-danger" value="Submit" />
                                     <button class="btn btn-info" data-dismiss="modal">Cancel</button>
                                     </form>
             </div>
         </div>
     </body>
-
-
-    <script type="layout2js.js"></script> 
 </html>
