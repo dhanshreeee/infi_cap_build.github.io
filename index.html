@@ -93,14 +93,29 @@ function getalert(){
 </style>
 <script>
 $(function(){
+  var enableDays = ["17-7-2020","20-7-2020"];
+
+  function enableAllTheseDays(date) 
+  {
+    var sdate=$.datepicker.formatDate('d-m-yy',date)
+    
+    if($.inArray(sdate, enableDays) != -1)
+    {
+      return [ true];
+    }
+
+    return [ false];
+  }
   
    $("#mycal").datepicker({
 
-      dateFormat: "dd/mm/yy",
+      dateFormat: "dd-mm-yy",
+      beforeShowDay:enableAllTheseDays,
+
       'autoclose':true,
       changeMonth:true,
-      changeYear:true,
-      minDate: new Date()
+      changeYear:true
+    // minDate: new Date(),
      
     });
 });
