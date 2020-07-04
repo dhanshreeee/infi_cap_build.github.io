@@ -11,6 +11,17 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+
+   <!--Jquery core cdn  --> 
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+                  <!-- Jquery UI cdn -->
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+
+
+
         <script>
             var now , random_number;
             $(document).ready(function(){
@@ -82,8 +93,13 @@ function getalert(){
 </style>
 <script>
 $(function(){
-   $('.datepicker').datepicker({
-      format: 'dd-mm-yyyy'
+  
+   $("#mycal").datepicker({
+
+      dateFormat: "dd/mm/yy",
+      'autoclose':true,
+      minDate: 0
+     
     });
 });
 </script>
@@ -173,7 +189,7 @@ $(function(){
                                <div class="row">
     <!-- <p>Enter the date:</p> -->
                               <div class=" col-6">
-                              <input type="text" class="form-control datepicker" placeholder="Select Date" required />
+                              <input type="text" class="form-control datepicker" id="mycal" placeholder="Select Date" required />
                               </div><br>
                               <div class="col-6">
                                 <input type="number" class="form-control form-control" name="time_slot" placeholder="Time-slot">
