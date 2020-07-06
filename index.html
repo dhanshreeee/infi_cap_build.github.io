@@ -2,24 +2,32 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+     
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
 
              <!--Jquery core cdn  --> 
-        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
                   <!-- Jquery UI cdn -->
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
 
-               <!-- Jquery UI css link -->
+          <!-- Jquery UI css link -->
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
 
+            <!-- jQuery timepicker library -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.js"></script>
+    
 
 
         <script>
@@ -40,39 +48,6 @@
             });
         </script>
 
-        <!-- function for email validation added -->
-          <!-- <script type = "text/javascript">  
-   
-      function validateEmail() {
-         var emailID = document.myForm.email.value;
-         atpos = emailID.indexOf("@");
-         dotpos = emailID.lastIndexOf(".");
-         
-         if (atpos < 1 || ( dotpos - atpos < 2 )) {
-            alert("Please enter correct email ID")
-            document.myForm.email.focus() ;
-            return false;
-         }
-         return( true );
-      }
-   
-       </script>   -->
-
- <!-- validation for phone number -->
- <!-- <script>
-function PhoneNumberValidation() {
-
-    var txtPhone = document.myForm.mobile.value;
-   if(txtPhone.length!=10) {
-       alert("invalid format of mobile number")
-       document.myForm.mobile.focus() ;
-    }
-
-}
-
-
-</script> -->
-
 <style>
     
     #blur {
@@ -88,6 +63,17 @@ function PhoneNumberValidation() {
     {
       display: none;
     }
+
+   
+
+    #time
+    {
+      display: none;    /* Using CSS ID_selector to keep the 
+                        'time-slot' field invisible(not displayed) 
+                          until the date is selected
+                           */
+    }
+
 </style>
 
 <script>
@@ -123,6 +109,7 @@ function PhoneNumberValidation() {
 
  <script type="text/javascript">
 
+// function to show the "coming sooon..." pop-up
     function js_function(value) 
      {
         if(value=="workshops")
@@ -137,7 +124,32 @@ function PhoneNumberValidation() {
                document.getElementById("for_webminar").style.display="block";
          }
      }
-                                              
+// function to display the 'time_slot' field only after  the date is selected by the user
+     function enable_timeslot(value) 
+     {
+       if(value!=0)
+       {
+
+      //   document.getElementById("time").disabled=false;
+
+          document.getElementById("time").style.display="block";
+         
+       }
+     }
+                                    
+ // time-picker                                   
+$(document).ready(function(){
+       $('.timepicker').timepicker({
+          timeFormat: 'h:mm p',
+          interval: 30,
+          minTime: '8',
+          maxTime: '11:30pm', 
+          startTime: '08:00',
+          dynamic: true,
+          dropdown: true,
+          scrollbar: true
+      });
+    });
  </script>
 
 </head>
@@ -207,12 +219,16 @@ function PhoneNumberValidation() {
                                <div class="row">
     <!-- <p>Enter the date:</p> -->
                               <div class=" col-6">
-                              <input type="text" class="form-control datepicker" id="mycal" placeholder="Select Date" required />
+                              <input type="text" class="form-control datepicker" id="mycal" placeholder="Select Date" onchange="enable_timeslot(this.value);" onkeydown="return false;" required />
                               </div><br>
                               <div class="col-6">
-                                <input type="number" class="form-control form-control" name="time_slot" placeholder="Time-slot" required>
+                                <input type="text" id="time" class="form-control timepicker " name="time_slot" placeholder="Time-slot" required />
                               </div>
+
+                              
+
                             </div>
+                      
                           </div>
 
                             <br>
