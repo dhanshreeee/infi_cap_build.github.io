@@ -74,6 +74,7 @@
                            */
     }
 
+
 </style>
 
 <script>
@@ -150,6 +151,15 @@ $(document).ready(function(){
           scrollbar: true
       });
     });
+
+
+// prevent user from entering date by typing
+// $('input').keydown(function(e)
+// {
+//   e.preventDefault();
+//   return false;
+
+// });
  </script>
 
 </head>
@@ -219,7 +229,7 @@ $(document).ready(function(){
                                <div class="row">
     <!-- <p>Enter the date:</p> -->
                               <div class=" col-6">
-                              <input type="text" class="form-control datepicker" id="mycal" placeholder="Select Date" onchange="enable_timeslot(this.value);" onkeydown="return false;" required />
+                              <input type="text" class="form-control datepicker" id="mycal" placeholder="Select Date" onchange="enable_timeslot(this.value);" onkeydown="return false;" onfocus="blur();" readonly="readonly" required />
                               </div><br>
                               <div class="col-6">
                                 <input type="text" id="time" class="form-control timepicker " name="time_slot" placeholder="Time-slot" required />
