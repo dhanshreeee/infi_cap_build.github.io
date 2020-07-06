@@ -115,14 +115,20 @@
      {
         if(value=="workshops")
          {
-             alert("Coming soonn...");
+             
              document.getElementById("for_webminar").style.display="none";
+             alert("Coming soonn...");
             
+         }
+
+         else if(value=="webinar")
+         {
+               document.getElementById("for_webminar").style.display="block";
          }
 
          else
          {
-               document.getElementById("for_webminar").style.display="block";
+            document.getElementById("for_webminar").style.display="none";
          }
      }
 // function to display the 'time_slot' field only after  the date is selected by the user
